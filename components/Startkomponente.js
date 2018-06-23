@@ -7,7 +7,7 @@ import {
     View,
     Button
 } from "react-native";
-import {Card} from "react-native-elements";
+import {Card, SearchBar} from "react-native-elements";
 
 const data = [
     {
@@ -42,95 +42,100 @@ export default class Startkomponente extends Component {
     render() {
         return (
             <ScrollView>
-                <View style={styles.categoryContainer}>
-                    <Text style={styles.categoryTitle}>
-                        Empfohlen
-                    </Text>
-                    <Button 
-                      title= "Mehr"
-                      color= "#EB5757"/>
-                </View>
-                <FlatList
-                    horizontal
-                    data={this.state.data}
-                    renderItem={({item: rowData}) => {
+              <SearchBar
+              lightTheme
+              placeholder = 'Suche...'
+              containerStyle = {styles.searchContainer}
+              inputStyle = {styles.searchInput} />
+              <View style={styles.categoryContainer}>
+                <Text style={styles.categoryTitle}>
+                    Empfohlen
+                </Text>
+                <Button 
+                  title= "Mehr"
+                  color= "#EB5757"/>
+              </View>
+              <FlatList
+                  horizontal
+                  data={this.state.data}
+                  renderItem={({item: rowData}) => {
 
-                        return (
+                      return (
 
-                            <Card
-                                image={{
-                                    uri: rowData.imageUrl
-                                }}
-                                containerStyle={{
-                                    padding: 0,
-                                    width: 200
-                                }}></Card>
-                        );
-                    }}
-                    keyExtractor={(item, index) => index}/>
+                          <Card
+                              image={{
+                                  uri: rowData.imageUrl
+                              }}
+                              containerStyle={{
+                                  padding: 0,
+                                  width: 200
+                              }}></Card>
+                      );
+                  }}
+                  keyExtractor={(item, index) => index}/>
 
 
-                <View style={styles.categoryContainer}>
-                    <Text style ={styles.categoryTitle}>
-                        Konzerte
-                    </Text>
-                    <Button 
-                      title= "Mehr"
-                      color= "#EB5757"/>
-                </View>
+              <View style={styles.categoryContainer}>
+                <Text style ={styles.categoryTitle}>
+                    Konzerte
+                </Text>
+                <Button 
+                  title= "Mehr"
+                  color= "#EB5757"/>
+              </View>
 
-                <FlatList
-                    horizontal
-                    data={this.state.data}
-                    renderItem={({item: rowData}) => {
-                        return (
-                            <Card
-                                image={{ uri: rowData.imageUrl }}
-                                containerStyle={{ padding: 0, width: 200 }}></Card>
-                        );
-                    }}
-                    keyExtractor={(item, index) => index}/>
+              <FlatList
+                  horizontal
+                  data={this.state.data}
+                  renderItem={({item: rowData}) => {
+                      return (
+                          <Card
+                              image={{ uri: rowData.imageUrl }}
+                              containerStyle={{ padding: 0, width: 200 }}></Card>
+                      );
+                  }}
+                  keyExtractor={(item, index) => index}/>
 
-                <View style={styles.categoryContainer}>
-                    <Text style={styles.categoryTitle}>
-                        Sport
-                    </Text>
-                    <Button 
-                      title= "Mehr"
-                      color= "#EB5757"/>
-                </View>
+              <View style={styles.categoryContainer}>
+                <Text style={styles.categoryTitle}>
+                    Sport
+                </Text>
+                <Button 
+                  title= "Mehr"
+                  color= "#EB5757"/>
+              </View>
 
-                <FlatList
-                    horizontal
-                    data={this.state.data}
-                    renderItem={({item: rowData}) => {
-                        return (
-                            <Card
-                                image={{ uri: rowData.imageUrl}}
-                                containerStyle={{ padding: 0,width: 200 }}></Card>
-                        );
-                    }}
-                    keyExtractor={(item, index) => index}/>
+              <FlatList
+                  horizontal
+                  data={this.state.data}
+                  renderItem={({item: rowData}) => {
+                      return (
+                          <Card
+                              image={{ uri: rowData.imageUrl}}
+                              containerStyle={{ padding: 0,width: 200 }}></Card>
+                      );
+                  }}
+                  keyExtractor={(item, index) => index}/>
 
-                <View style={styles.categoryContainer}>
-                    <Text style={styles.categoryTitle}>
-                        Kultur
-                    </Text>
-                    <Button 
-                      title= "Mehr"
-                      color= "#EB5757"/>
-                </View>
-                <FlatList
-                    horizontal
-                    data={this.state.data}
-                    renderItem={({item: rowData}) => {
-                        return (
-                            <Card
-                                image={{ uri: rowData.imageUrl }}
-                                containerStyle={{ padding: 0, width: 200 }}></Card>
-                        );
-                    }}
-                    keyExtractor={(item, index) => index}/>
+              <View style={styles.categoryContainer}>
+                <Text style={styles.categoryTitle}>
+                    Kultur
+                </Text>
+                <Button 
+                  title= "Mehr"
+                  color= "#EB5757"/>
+              </View>
+              <FlatList
+                  horizontal
+                  data={this.state.data}
+                  renderItem={({item: rowData}) => {
+                      return (
+                          <Card
+                              image={{ uri: rowData.imageUrl }}
+                              containerStyle={{ padding: 0, width: 200 }}></Card>
+                      );
+                  }}
+                  keyExtractor={(item, index) => index}/>
 
             </ScrollView>
 
@@ -150,7 +155,14 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold'
     },
-    moreText: {
-        color: '#EB5757',
-    }
+    searchContainer: {
+      backgroundColor: 'white',
+      borderWidth: 0, //no effect
+      shadowColor: 'white', //no effect
+      borderBottomColor: 'transparent',
+      borderTopColor: 'transparent'
+     },
+     searchInput: {
+       backgroundColor: 'lightgrey'
+     }
 });
