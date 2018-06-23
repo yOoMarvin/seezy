@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, Text, ScrollView, StyleSheet, View } from "react-native";
+import { FlatList, Text, ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Card } from "react-native-elements";
 
 const data = [
@@ -48,6 +48,7 @@ export default class Startkomponente extends Component {
         horizontal
         data={this.state.data}
         renderItem={({ item: rowData }) => {
+
           return (
 
             <Card
