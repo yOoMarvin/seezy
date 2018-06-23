@@ -32,7 +32,8 @@ export default class Chat extends Component {
                                 roundAvatar
                                 avatar={{ uri: l.avatar_url }}
                                 key={i}
-                                title={l.name}/>
+                                title={l.name}
+                                subtitle={l.subtitle}/>
                         ))
                     }
                 </List>
