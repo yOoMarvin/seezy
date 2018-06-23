@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 
 //Import der Screen-Komponenten und des Footers, wo die Navigtion stattfindet
 import Startkomponente from './components/Startkomponente';
-import Detailskomponente from './components/Startkomponente';
+import Detailskomponente from './components/Detailskomponente';
 
 
 //firebase.database().goOnline();
