@@ -42,7 +42,7 @@ export default class Startkomponente extends Component {
       <ScrollView>
       <View style ={styles.categoryTitle}>
       <Text style ={{fontSize:25}}> Empfohlen </Text>
-      <Text> Mehr </Text>
+      <Text style={styles.more}> Mehr </Text>
       </View>
       <FlatList
         horizontal
@@ -60,7 +60,10 @@ export default class Startkomponente extends Component {
         keyExtractor={(item, index) => index}
       />
 
+      <View style ={styles.categoryTitle}>
       <Text style ={{fontSize:25}}> Konzerte </Text>
+      <Text style={styles.more}> Mehr </Text>
+      </View>
 
       <FlatList
         horizontal
@@ -77,8 +80,10 @@ export default class Startkomponente extends Component {
         keyExtractor={(item, index) => index}
       />
 
+      <View style ={styles.categoryTitle}>
       <Text style ={{fontSize:25}}> Sport </Text>
-
+      <Text style={styles.more}> Mehr </Text>
+      </View>
       <FlatList
         horizontal
         data={this.state.data}
@@ -94,8 +99,10 @@ export default class Startkomponente extends Component {
         keyExtractor={(item, index) => index}
       />
 
+      <View style ={styles.categoryTitle}>
       <Text style ={{fontSize:25}}> Kultur </Text>
-
+      <Text style={styles.more}> Mehr </Text>
+      </View>
       <FlatList
         horizontal
         data={this.state.data}
@@ -123,6 +130,12 @@ const styles = StyleSheet.create({
   categoryTitle: {
     flexDirection:'row',
     justifyContent:'space-between'
+  },
+
+  more:{
+    fontSize:20,
+    color: '#f39c12',
+    textDecorationLine:'underline'
   },
 
 });
