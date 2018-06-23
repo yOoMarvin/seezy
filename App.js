@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 //Import der Screen-Komponenten und des Footers, wo die Navigtion stattfindet
 import Startkomponente from './components/Startkomponente';
 import Detailskomponente from './components/Detailskomponente';
+import Chat from './components/Chat';
 
 
 //firebase.database().goOnline();
@@ -28,7 +29,7 @@ class Bookedscreen extends Component {
   render(){
     return(
       <View style = {{flex:1, marginTop:30}}>
-      <Text>Chat </Text>
+        <Text>Booked </Text>
       </View>
     );
   }
@@ -38,7 +39,7 @@ class Chatscreen extends Component {
   render(){
     return(
       <View style = {{flex: 1, marginTop:30}}>
-          <Text>Chat </Text>
+          <Chat navigation = {this.props.navigation}/>
       </View>
     );
   }
@@ -56,7 +57,7 @@ class Profilscreen extends Component {
 
 export default createBottomTabNavigator({
   Start: Startscreen,
-  Booked: Chatscreen,
+  Booked: Bookedscreen,
   Chat: Chatscreen,
   Profil: Profilscreen,
 });
