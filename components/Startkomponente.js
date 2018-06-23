@@ -79,18 +79,13 @@ export default class Startkomponente extends Component {
                 </View>
 
                 <FlatList
-                    horizontal="horizontal"
+                    horizontal
                     data={this.state.data}
                     renderItem={({item: rowData}) => {
                         return (
                             <Card
-                                image={{
-                                    uri: rowData.imageUrl
-                                }}
-                                containerStyle={{
-                                    padding: 0,
-                                    width: 200
-                                }}></Card>
+                                image={{ uri: rowData.imageUrl }}
+                                containerStyle={{ padding: 0, width: 200 }}></Card>
                         );
                     }}
                     keyExtractor={(item, index) => index}/>
@@ -110,13 +105,8 @@ export default class Startkomponente extends Component {
                     renderItem={({item: rowData}) => {
                         return (
                             <Card
-                                image={{
-                                    uri: rowData.imageUrl
-                                }}
-                                containerStyle={{
-                                    padding: 0,
-                                    width: 200
-                                }}></Card>
+                                image={{ uri: rowData.imageUrl}}
+                                containerStyle={{ padding: 0,width: 200 }}></Card>
                         );
                     }}
                     keyExtractor={(item, index) => index}/>
@@ -135,13 +125,8 @@ export default class Startkomponente extends Component {
                     renderItem={({item: rowData}) => {
                         return (
                             <Card
-                                image={{
-                                    uri: rowData.imageUrl
-                                }}
-                                containerStyle={{
-                                    padding: 0,
-                                    width: 200
-                                }}></Card>
+                                image={{ uri: rowData.imageUrl }}
+                                containerStyle={{ padding: 0, width: 200 }}></Card>
                         );
                     }}
                     keyExtractor={(item, index) => index}/>
