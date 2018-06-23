@@ -5,7 +5,7 @@ import {
     ScrollView,
     StyleSheet,
     View,
-    TouchableOpacity
+    Button
 } from "react-native";
 import {Card} from "react-native-elements";
 
@@ -42,13 +42,13 @@ export default class Startkomponente extends Component {
     render() {
         return (
             <ScrollView>
-                <View style={styles.categoryTitle}>
-                    <Text style={{fontSize:25}}>
+                <View style={styles.categoryContainer}>
+                    <Text style={styles.categoryTitle}>
                         Empfohlen
                     </Text>
-                    <Text style={styles.more}>
-                        Mehr
-                    </Text>
+                    <Button 
+                      title= "Mehr"
+                      color= "#EB5757"/>
                 </View>
                 <FlatList
                     horizontal
@@ -69,13 +69,14 @@ export default class Startkomponente extends Component {
                     }}
                     keyExtractor={(item, index) => index}/>
 
-                <View style={styles.categoryTitle}>
-                    <Text style ={{fontSize:25}}>
+
+                <View style={styles.categoryContainer}>
+                    <Text style ={styles.categoryTitle}>
                         Konzerte
                     </Text>
-                    <Text style={styles.more}>
-                        Mehr
-                    </Text>
+                    <Button 
+                      title= "Mehr"
+                      color= "#EB5757"/>
                 </View>
 
                 <FlatList
@@ -90,13 +91,13 @@ export default class Startkomponente extends Component {
                     }}
                     keyExtractor={(item, index) => index}/>
 
-                <View style={styles.categoryTitle}>
-                    <Text style={{fontSize:25}}>
+                <View style={styles.categoryContainer}>
+                    <Text style={styles.categoryTitle}>
                         Sport
                     </Text>
-                    <Text style={styles.more}>
-                        Mehr
-                    </Text>
+                    <Button 
+                      title= "Mehr"
+                      color= "#EB5757"/>
                 </View>
 
                 <FlatList
@@ -111,13 +112,13 @@ export default class Startkomponente extends Component {
                     }}
                     keyExtractor={(item, index) => index}/>
 
-                <View style={styles.categoryTitle}>
-                    <Text style={{fontSize:25}}>
+                <View style={styles.categoryContainer}>
+                    <Text style={styles.categoryTitle}>
                         Kultur
                     </Text>
-                    <Text style={styles.more}>
-                        Mehr
-                    </Text>
+                    <Button 
+                      title= "Mehr"
+                      color= "#EB5757"/>
                 </View>
                 <FlatList
                     horizontal
@@ -138,14 +139,18 @@ export default class Startkomponente extends Component {
 }
 
 const styles = StyleSheet.create({
-    categoryTitle: {
+    categoryContainer: {
+        marginLeft: 12,
+        marginRight: 12,
+        marginTop: 32,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
-
-    more: {
-        fontSize: 20,
-        color: '#f39c12',
-        textDecorationLine: 'underline'
+    categoryTitle: {
+      fontSize: 24,
+      fontWeight: 'bold'
+    },
+    moreText: {
+        color: '#EB5757',
     }
 });
