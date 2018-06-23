@@ -29,7 +29,7 @@ class Bookedscreen extends Component {
   render(){
     return(
       <View style = {{flex:1, marginTop:30}}>
-      <Text>Chat </Text>
+        <Text>Booked </Text>
       </View>
     );
   }
@@ -57,7 +57,7 @@ class Profilscreen extends Component {
 
 export default createBottomTabNavigator({
   Start: Startscreen,
-  Booked: Chatscreen,
+  Booked: Bookedscreen,
   Chat: Chatscreen,
   Profil: Profilscreen,
 });
