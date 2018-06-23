@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, Text, ScrollView, StyleSheet, View, Image } from "react-native";
+import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button } from "react-native";
 import { Card } from "react-native-elements";
 
 const data =[
@@ -15,7 +15,22 @@ const data =[
     imageUrl: "../resources/detail/umbrella.png",
     title: "something3"
   },
-]
+
+  {
+    imageUrl: "../resources/detail/navigation.png",
+    title: "something3"
+  },
+
+  {
+    imageUrl: "../resources/detail/thief.png",
+    title: "something3"
+  },
+
+  {
+    imageUrl: "../resources/detail/tooth.png",
+    title: "something3"
+  }
+];
 
 
 
@@ -86,7 +101,9 @@ marginTop: 20
     return (
 
       <Card
-        image={{ uri: rowData.imageUrl }}
+
+      image={require('../resources/detail/Basic.png')}
+
         containerStyle={{ padding: 0, width: 200, height: 100 }}
       >
       </Card>
@@ -95,6 +112,110 @@ marginTop: 20
   keyExtractor={(item, index) => index}
 />
 </View>
+
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+
+
+<View style ={styles.packages}>
+
+<Card
+  image={require('../resources/detail/Basic.png')}
+  containerStyle={{ padding: 0, width: 150 }}
+>
+<Text>Lorem </Text>
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<Text>Lorem </Text>
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<Text>Lorem </Text>
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<Text>Lorem </Text>
+
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<View style={styles.container}>
+<Text style={styles.price}> 5,99€ </Text>
+</View>
+
+<Button title='Auswählen' color='#F2C94C' />
+
+</Card>
+
+<Card
+  image={require('../resources/detail/Top.png')}
+  containerStyle={{ padding: 0, width: 150 }}
+>
+<Text>Lorem </Text>
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<Text>Lorem </Text>
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<Text>Lorem </Text>
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<Text>Lorem </Text>
+
+<View
+style={{
+borderBottomColor: 'black',
+borderBottomWidth: 1,
+marginTop: 20
+}}
+/>
+<View style={styles.container}>
+<Text style={styles.price}> 8,99€ </Text>
+</View>
+
+<Button title='Auswählen' color='#27AE60' />
+
+</Card>
+</View>
+
+
       </ScrollView>
     );
 
@@ -121,7 +242,21 @@ const styles = StyleSheet.create({
   icon:{
     width:35,
     height:40
-  }
+  },
+
+  packages: {
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
+container:{
+  alignItems:'center',
+},
+
+price:{
+  fontSize:20,
+  fontWeight:'bold'
+}
+
 
 
 
