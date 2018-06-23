@@ -14,7 +14,6 @@ class Startscreen extends Component{
   render(){
     return(
     <View style = {{flex:1, marginTop:30}}>
-     <Text> Startscreen</Text>
      <Startkomponente navigation = {this.props.navigation}/>
     </View>
 

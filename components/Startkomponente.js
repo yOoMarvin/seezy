@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList, Text, ScrollView, StyleSheet, View } from "react-native";
 import { Card } from "react-native-elements";
 
 const data = [
@@ -39,24 +39,90 @@ export default class Startkomponente extends Component {
 
   render() {
     return (
+      <ScrollView>
+      <View style ={styles.categoryTitle}>
+      <Text style ={{fontSize:25}}> Empfohlen </Text>
+      <Text> Mehr </Text>
+      </View>
+      <FlatList
+        horizontal
+        data={this.state.data}
+        renderItem={({ item: rowData }) => {
+          return (
+
+            <Card
+              image={{ uri: rowData.imageUrl }}
+              containerStyle={{ padding: 0, width: 200 }}
+            >
+            </Card>
+          );
+        }}
+        keyExtractor={(item, index) => index}
+      />
+
+      <Text style ={{fontSize:25}}> Konzerte </Text>
+
       <FlatList
         horizontal
         data={this.state.data}
         renderItem={({ item: rowData }) => {
           return (
             <Card
-              title={null}
               image={{ uri: rowData.imageUrl }}
-              containerStyle={{ padding: 0, width: 160 }}
+              containerStyle={{ padding: 0, width: 200 }}
             >
-              <Text style={{ marginBottom: 10 }}>
-                {rowData.title}
-              </Text>
             </Card>
           );
         }}
         keyExtractor={(item, index) => index}
       />
+
+      <Text style ={{fontSize:25}}> Sport </Text>
+
+      <FlatList
+        horizontal
+        data={this.state.data}
+        renderItem={({ item: rowData }) => {
+          return (
+            <Card
+              image={{ uri: rowData.imageUrl }}
+              containerStyle={{ padding: 0, width: 200 }}
+            >
+            </Card>
+          );
+        }}
+        keyExtractor={(item, index) => index}
+      />
+
+      <Text style ={{fontSize:25}}> Kultur </Text>
+
+      <FlatList
+        horizontal
+        data={this.state.data}
+        renderItem={({ item: rowData }) => {
+          return (
+            <Card
+              image={{ uri: rowData.imageUrl }}
+              containerStyle={{ padding: 0, width: 200 }}
+            >
+            </Card>
+          );
+        }}
+        keyExtractor={(item, index) => index}
+      />
+
+
+
+</ScrollView>
+
     );
   }
 }
+
+const styles = StyleSheet.create({
+  categoryTitle: {
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
+
+});
