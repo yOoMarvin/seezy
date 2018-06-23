@@ -1,23 +1,61 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import {FlatList, View, Image, Text, ActivityIndicator, TouchableOpacity, ScrollView} from "react-native";
+//import {List} from "react-native-elements";
+//import firebase from 'react-native-firebase';
+import { createBottomTabNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+//Import der Screen-Komponenten und des Footers, wo die Navigtion stattfindet
+import Startkomponente from './components/Startkomponente';
+
+//firebase.database().goOnline();
+
+class Startscreen extends Component{
+
+  render(){
+    return(
+    <View style = {{flex:1, marginTop:30}}>
+     <Text> Startscreen</Text>
+     <Startkomponente navigation = {this.props.navigation}/>
+    </View>
+
+    );
+  }
+}
+
+class Bookedscreen extends Component {
+
+  render(){
+    return(
+      <View style = {{flex:1, marginTop:30}}>
+      <Text>Chat </Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+class Chatscreen extends Component {
+  render(){
+    return(
+      <View style = {{flex: 1, marginTop:30}}>
+          <Text>Chat </Text>
+      </View>
+    );
+  }
+}
+
+class Profilscreen extends Component {
+  render(){
+    return(
+      <View style = {{flexDirection:'column', marginTop:30}}>
+        <Text>Profil </Text>
+      </View>
+    );
+  }
+}
+
+export default createBottomTabNavigator({
+  Start: Startscreen,
+  Booked: Chatscreen,
+  Chat: Chatscreen,
+  Profil: Profilscreen,
 });
