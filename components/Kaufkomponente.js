@@ -10,8 +10,8 @@ export default class Kaufkomponente extends Component {
 
   showAlert() {
     Alert.alert('High Five!', 'Viel Spaß bei deinem Event! Jetzt heißt es nur noch genießen. Den Rest machen wir.',
-      [{ text: 'OK', onPress: () => console.log('OK Pressed') }],
-      { cancelable: false })
+      [{ text: 'OK', onPress: () => {console.log("Done");} }],
+      { cancelable: false });
   }
   // TODO Bei ok zum Booked Screen
 
@@ -100,7 +100,7 @@ export default class Kaufkomponente extends Component {
 
           </View>
 
-          <View>
+          <View style={{alignItems: 'center', justifyContent: 'center', marginTop: 8, marginBottom: 8}}>
             <Text style={styles.price}> 5,99€ </Text>
           </View>
 

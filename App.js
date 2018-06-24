@@ -54,6 +54,14 @@ class DetailsScreen extends Component {
   }
 }
 
+class KaufScreen extends Component {
+  render() {
+    return(
+      <Kaufkomponente navigation={this.props.navigation} />
+    )
+  }
+}
+
 class Bookedscreen extends Component {
   static navigationOptions = {
     tabBarLabel: 'GEBUCHT',
@@ -120,6 +128,12 @@ const EventStack = createStackNavigator({
        headerTintColor: '#EB5757',
      }
     },
+  Kaufen: {
+    screen:KaufScreen,
+    navigationOptions: {
+      headerTintColor: '#EB5757',
+    }
+  }
 });
 
 

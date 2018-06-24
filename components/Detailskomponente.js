@@ -105,7 +105,7 @@ export default class Detailskomponente extends Component {
               <View style={styles.container}>
                 <Text style={styles.price}> 3,99€ </Text>
               </View>
-              <Button title='Auswählen' color='#F2C94C' />
+              <Button onPress={() => {this.props.navigation.navigate("Kaufen")}} title='Auswählen' color='#F2C94C' />
             </Card>
 
           <Card
