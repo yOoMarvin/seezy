@@ -9,6 +9,8 @@ import Startkomponente from './components/Startkomponente';
 import Detailskomponente from './components/Detailskomponente';
 import Chat from './components/Chat';
 
+import Icon from 'react-native-elements';
+
 
 //firebase.database().goOnline();
 
@@ -55,9 +57,11 @@ class Profilscreen extends Component {
   }
 }
 
+
 export default createBottomTabNavigator({
   Start: Startscreen,
   Booked: Bookedscreen,
   Chat: Chatscreen,
   Profil: Profilscreen,
 });
+
