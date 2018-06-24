@@ -4,31 +4,24 @@ import { Card, ListItem } from "react-native-elements";
 
 const data =[
   {
-    imageUrl: "../resources/detail/creditcard.png",
-    title: "something"
+    imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/shield.png",
+    text: "Diebstahl",
+    style: {width: 20, height: 24}
   },
   {
-    imageUrl: "../resources/detail/shield.png",
-    title: "something2"
+    imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/bell.png",
+    text: "Schlafentzug",
+    style: {width: 20, height: 24}
   },
   {
-    imageUrl: "../resources/detail/umbrella.png",
-    title: "something3"
+    imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/dollar-sign.png",
+    text: "Sachschäden",
+    style: {width: 20, height: 26}
   },
-
   {
-    imageUrl: "../resources/detail/navigation.png",
-    title: "something3"
-  },
-
-  {
-    imageUrl: "../resources/detail/thief.png",
-    title: "something3"
-  },
-
-  {
-    imageUrl: "../resources/detail/teeth.png",
-    title: "something3"
+    imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/activity.png",
+    text: "Kaffee Entzug",
+    style: {width: 20, height: 24}
   }
 ];
 
@@ -46,160 +39,87 @@ export default class Detailskomponente extends Component {
     return(
       <ScrollView>
         <View>
-          <Image source={require('../resources/detail/publicviewing.jpg')}
+          <Image source={require('../resources/detail/hackathon.jpg')}
           style = {styles.headerImage}
           />
-          <Text style={styles.heading}> Public Viewing </Text>
+          <Text style={styles.heading}> SV Insurathon </Text>
 
           <View style ={styles.row}>
             <Image 
-              source={require('../resources/detail/mappin.png')}
-              style = {styles.icon}
+              source={require('../resources/detail/map-pin.png')}
+              style = {styles.iconPin}
             />
-            <Text>Biergarten Schlosspark, Stuttgart</Text>
+            <Text style={styles.eventDetailText}>SparkassenVersicherung, Stuttgart</Text>
           </View>
 
           <View style ={styles.row}>
             <Image 
               source={require('../resources/detail/clock.png')}
-              style = {styles.icon}
+              style = {styles.iconClock}
             />
-            <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
+            <Text style={styles.eventDetailText}>Sa. 23.06.2018 09:00 Uhr {"\n"}bis {"\n"}Mo. 25.06.2018 20:00 Uhr</Text>
           </View>
 
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-            }}/>
-
+          <View style={styles.horizontalDivider}/> 
         </View>
-        <View style={{
-          marginTop: 20,
-          padding: 5
-        }}>
-          <Text> 
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam ...
-          </Text>
-        </View>
+        <Text style={styles.eventDetailText}> 
+          Die SV SparkassenVersicherung veranstaltet gemeinsam mit der SV Informatik GmbH erstmalig einen Hackathon und gibt dir die Chance, die Zukunft der Versicherungsbranche mitzugestalten... <Text style={{color:'#EB5757'}}>Mehr anzeigen</Text>
+        </Text>
 
-        <View
-          style={{
-          borderBottomColor: 'black',
-          borderBottomWidth: 1,
-          marginTop: 20
-          }}/>
+        <View style= {styles.horizontalDivider}/>
 
         <View>
-          <Text>Zu beachten </Text>
+          <Text style={styles.subheading}>Zu beachten </Text>
             <FlatList
               horizontal
               data={this.state.data}
               renderItem={({ item }) => {
 
                 return (
-                  <Card
-                  //TODO fit to size of card
-                  //TODO loop for every damage
-                  image={{ uri: item.url }}
-                  imageStyle={{width:'100%', height:'100%'}}
+                  <View style={styles.dangerContainer}>
+                    <Image 
+                    style={item.style}
+                    source={{ uri: item.imageUrl}}/>
+                    <Text> {item.text} </Text>
 
-                    containerStyle={{ padding: 0, width: 200, height: 100 }}
-                  >
-
-
-                  </Card>
+                  </View>
                 );
               }}
               keyExtractor={(item, index) => index}
             />
         </View>
 
-        <View
-          style={{
-          borderBottomColor: 'black',
-          borderBottomWidth: 1,
-          marginTop: 20
-          }}/>
+        <View style={styles.horizontalDivider}/>
 
 
           <View style ={styles.packages}>
             <Card
               image={require('../resources/detail/Basic.png')}
               containerStyle={{ padding: 0, width: 150 }}>
-              <Text>Lorem </Text>
-              <View
-                style={{
-                borderBottomColor: 'black',
-                borderBottomWidth: 1,
-                marginTop: 20
-                }}
-                />
-              <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }}/>
-            <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }}/>
-            <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }}/>
-            <View style={styles.container}>
-              <Text style={styles.price}> 5,99€ </Text>
-            </View>
-            <Button title='Auswählen' color='#F2C94C' />
-          </Card>
+              <Text style={{ marginTop:16, alignSelf:'center'}}>Haftpflicht </Text>
+              <View style={styles.horizontalDivider}/>
+              <Text style={styles.packageTextNegative}>Kaffe Flatrate </Text>
+              <View style={styles.horizontalDivider}/>
+              <Text style={styles.packageTextNegative}>Comfort Bett </Text>
+              <View style={styles.horizontalDivider}/>
+              <View style={styles.container}>
+                <Text style={styles.price}> 3,99€ </Text>
+              </View>
+              <Button title='Auswählen' color='#F2C94C' />
+            </Card>
 
           <Card
             image={require('../resources/detail/Top.png')}
             containerStyle={{ padding: 0, width: 150 }}>
-            <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }} />
-            <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }} />
-            <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }} />
-            <Text>Lorem </Text>
-            <View
-              style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-              }} />
+            <Text style={{ marginTop:16, alignSelf:'center'}}>Haftpflicht </Text>
+            <View style={styles.horizontalDivider}/>
+            <Text style={styles.packageText}>Kaffe Flatrate </Text>
+            <View style={styles.horizontalDivider}/>
+            <Text style={styles.packageTextNegative}>Comfort Bett </Text>
+            <View style={styles.horizontalDivider}/>
             <View style={styles.container}>
-              <Text style={styles.price}> 8,99€ </Text>
+              <Text style={styles.price}> 5,99€ </Text>
             </View>
-
             <Button title='Auswählen' color='#27AE60' />
 
           </Card>
@@ -214,39 +134,82 @@ const styles = StyleSheet.create({
   headerImage: {
     flex:1,
     alignSelf:'stretch',
-    height:150,
+    height:200,
     width:'100%'
   },
-
   heading:{
-    fontSize:50
+    marginTop: 12,
+    fontSize:36,
+    fontWeight: 'bold'
   },
-
+  subheading:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 12
+  },
   row: {
     flexDirection:'row',
-    justifyContent:'space-around',
     marginTop: 20
   },
-
-  icon:{
-    width:35,
-    height:40
+  eventDetailText: {
+    marginLeft: 32,
+    marginRight:32
   },
-
+  iconPin:{
+    marginLeft: 12,
+    width:24,
+    height:28
+  },
+  iconClock:{
+    marginLeft: 12,
+    width:24,
+    height:24
+  },
+  dangerIcon: {
+    height: 24,
+    width: 22,
+    resizeMode: 'cover'
+  },
+  dangerContainer: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    padding: 8,
+    marginLeft: 16,
+    marginTop: 16,
+    borderRadius: 3,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   packages: {
     flexDirection:'row',
-    justifyContent:'space-between'
+    justifyContent:'space-between',
+    borderRadius: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 16
   },
-container:{
-  alignItems:'center',
-},
-
-price:{
-  fontSize:20,
-  fontWeight:'bold'
-}
-
-
-
-
+  packageText: {
+    alignSelf: 'center'
+  },
+  packageTextNegative: {
+    alignSelf: 'center',
+    textDecorationLine: 'line-through'
+  },
+  container:{
+    alignItems:'center',
+    },
+  price:{
+    fontSize:20,
+    fontWeight:'bold',
+    marginBottom: 16
+  },
+  horizontalDivider: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
+    marginTop: 32,
+    marginBottom: 32,
+    width: '80%',
+    justifyContent:'center',
+    alignSelf: 'center'
+  }
 });

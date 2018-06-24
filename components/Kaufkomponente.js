@@ -90,7 +90,7 @@ export default class Kaufkomponente extends Component {
 
 
   <View style ={styles.row}>
-  <Image source={require('../resources/detail/mappin.png')}
+  <Image source={require('../resources/detail/map-pin.png')}
   style = {styles.icon}
   />
   <Text style={styles.textdesc}>Biergarten Schlosspark, Stuttgart</Text>
