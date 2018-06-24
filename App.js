@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 import Startkomponente from './components/Startkomponente';
 import Detailskomponente from './components/Detailskomponente';
 import Chat from './components/Chat';
+import Kaufkomponente from './components/Kaufkomponente';
 
 import Icon from 'react-native-elements';
 
@@ -47,7 +48,7 @@ class Bookedscreen extends Component {
   render(){
     return(
       <View style = {{flex:1, marginTop:30}}>
-        <Text>Booked </Text>
+        <Kaufkomponente navigation = {this.props.navigation}/>
       </View>
     );
   }
@@ -85,7 +86,7 @@ class Profilscreen extends Component {
   render(){
     return(
       <View style = {{flexDirection:'column', marginTop:30}}>
-        <Text>Profil </Text>
+        <Detailskomponente navigation = {this.props.navigation}/>
       </View>
     );
   }
