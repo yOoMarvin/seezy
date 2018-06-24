@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 
-const data =[
+const data = [
   {
     imageUrl: "../resources/detail/creditcard.png",
     title: "something"
@@ -43,182 +43,182 @@ export default class Detailskomponente extends Component {
   }
 
   render() {
-    return(
-      <ScrollView>
-<View>
-      <Image source={require('../resources/detail/publicviewing.jpg')}
-      style = {styles.headerImage}
-      />
-      <Text style={styles.heading}> Public Viewing </Text>
-
-      <View style ={styles.row}>
-      <Image source={require('../resources/detail/mappin.png')}
-      style = {styles.icon}
-      />
-      <Text>Biergarten Schlosspark, Stuttgart</Text>
-      </View>
-
-      <View style ={styles.row}>
-      <Image source={require('../resources/detail/clock.png')}
-      style = {styles.icon}
-      />
-      <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
-      </View>
-
-      <View
-  style={{
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    marginTop: 20
-  }}
-  />
-
-  </View>
-  <View style={{
-    marginTop: 20,
-    padding: 5
-  }}>
-    <Text> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-    At vero eos et accusam ...</Text>
-  </View>
-
-  <View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-
-<View>
-<Text>Zu beachten </Text>
-<FlatList
-  horizontal
-  data={this.state.data}
-  renderItem={({ item }) => {
-
     return (
+      <ScrollView>
+        <View>
+          <Image source={require('../resources/detail/publicviewing.jpg')}
+            style={styles.headerImage}
+          />
+          <Text style={styles.heading}> Public Viewing </Text>
 
-      <Card
+          <View style={styles.row}>
+            <Image source={require('../resources/detail/mappin.png')}
+              style={styles.icon}
+            />
+            <Text>Biergarten Schlosspark, Stuttgart</Text>
+          </View>
 
-      //TODO fit to size of card
-      //TODO loop for every damage
-      image={{ uri: item.url }}
-      imageStyle={{width:'100%', height:'100%'}}
+          <View style={styles.row}>
+            <Image source={require('../resources/detail/clock.png')}
+              style={styles.icon}
+            />
+            <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
+          </View>
 
-        containerStyle={{ padding: 0, width: 200, height: 100 }}
-      >
+          <View
+            style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+            }}
+          />
+
+        </View>
+        <View style={{
+          marginTop: 20,
+          padding: 5
+        }}>
+          <Text> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    At vero eos et accusam ...</Text>
+        </View>
+
+        <View
+          style={{
+            borderBottomColor: 'black',
+            borderBottomWidth: 1,
+            marginTop: 20
+          }}
+        />
+
+        <View>
+          <Text>Zu beachten </Text>
+          <FlatList
+            horizontal
+            data={this.state.data}
+            renderItem={({ item }) => {
+
+              return (
+
+                <Card
+
+                  //TODO fit to size of card
+                  //TODO loop for every damage
+                  image={{ uri: item.url }}
+                  imageStyle={{ width: '100%', height: '100%' }}
+
+                  containerStyle={{ padding: 0, width: 200, height: 100 }}
+                >
 
 
-      </Card>
-    );
-  }}
-  keyExtractor={(item, index) => index}
-/>
-</View>
+                </Card>
+              );
+            }}
+            keyExtractor={(item, index) => index}
+          />
+        </View>
 
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
+        <View
+          style={{
+            borderBottomColor: 'black',
+            borderBottomWidth: 1,
+            marginTop: 20
+          }}
+        />
 
 
-<View style ={styles.packages}>
+        <View style={styles.packages}>
 
-<Card
-  image={require('../resources/detail/Basic.png')}
-  containerStyle={{ padding: 0, width: 150 }}
->
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
+          <Card
+            image={require('../resources/detail/Basic.png')}
+            containerStyle={{ padding: 0, width: 150 }}
+          >
+            <Text>Lorem </Text>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <Text>Lorem </Text>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <Text>Lorem </Text>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <Text>Lorem </Text>
 
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<View style={styles.container}>
-<Text style={styles.price}> 5,99€ </Text>
-</View>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <View style={styles.container}>
+              <Text style={styles.price}> 5,99€ </Text>
+            </View>
 
-<Button title='Auswählen' color='#F2C94C' />
+            <Button title='Auswählen' color='#F2C94C' />
 
-</Card>
+          </Card>
 
-<Card
-  image={require('../resources/detail/Top.png')}
-  containerStyle={{ padding: 0, width: 150 }}
->
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
+          <Card
+            image={require('../resources/detail/Top.png')}
+            containerStyle={{ padding: 0, width: 150 }}
+          >
+            <Text>Lorem </Text>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <Text>Lorem </Text>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <Text>Lorem </Text>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <Text>Lorem </Text>
 
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<View style={styles.container}>
-<Text style={styles.price}> 8,99€ </Text>
-</View>
+            <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+              }}
+            />
+            <View style={styles.container}>
+              <Text style={styles.price}> 8,99€ </Text>
+            </View>
 
-<Button title='Auswählen' color='#27AE60' />
+            <Button title='Auswählen' color='#27AE60' />
 
-</Card>
-</View>
+          </Card>
+        </View>
 
 
       </ScrollView>
@@ -229,39 +229,39 @@ marginTop: 20
 
 const styles = StyleSheet.create({
   headerImage: {
-    flex:1,
-    alignSelf:'stretch',
-    height:150,
-    width:'100%'
+    flex: 1,
+    alignSelf: 'stretch',
+    height: 150,
+    width: '100%'
   },
 
-  heading:{
-    fontSize:50
+  heading: {
+    fontSize: 50
   },
 
   row: {
-    flexDirection:'row',
-    justifyContent:'space-around',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     marginTop: 20
   },
 
-  icon:{
-    width:35,
-    height:40
+  icon: {
+    width: 35,
+    height: 40
   },
 
   packages: {
-    flexDirection:'row',
-    justifyContent:'space-between'
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
-container:{
-  alignItems:'center',
-},
+  container: {
+    alignItems: 'center',
+  },
 
-price:{
-  fontSize:20,
-  fontWeight:'bold'
-}
+  price: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
 
 
 

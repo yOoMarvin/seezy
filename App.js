@@ -9,9 +9,7 @@ import Startkomponente from './components/Startkomponente';
 import Detailskomponente from './components/Detailskomponente';
 import Chat from './components/Chat';
 import Kaufkomponente from './components/Kaufkomponente';
-
-
-//firebase.database().goOnline();
+import Bookedkomponente from './components/Bookedkomponente';
 
 class Startscreen extends Component{
 
@@ -30,7 +28,7 @@ class Bookedscreen extends Component {
   render(){
     return(
       <View style = {{flex:1, marginTop:30}}>
-        <Kaufkomponente navigation = {this.props.navigation}/>
+        <Bookedkomponente navigation = {this.props.navigation}/>
       </View>
     );
   }
