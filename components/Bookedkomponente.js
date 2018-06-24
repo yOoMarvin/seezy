@@ -43,11 +43,6 @@ export default class Bookedkomponente extends Component {
     };
   }
 
-  showAlert() {
-    Alert.alert('High Five!', 'Viel Spaß bei deinem Event! Jetzt heißt es nur noch genießen. Den Rest machen wir.',
-      [{ text: 'OK', onPress: () => console.log('OK Pressed') }],
-      { cancelable: false })
-  }
   // TODO Bei ok zum Booked Screen
 
   render() {

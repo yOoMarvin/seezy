@@ -48,7 +48,7 @@ class Profilscreen extends Component {
   render(){
     return(
       <View style = {{flexDirection:'column', marginTop:30}}>
-        <Detailskomponente navigation = {this.props.navigation}/>
+        <Kaufkomponente navigation = {this.props.navigation}/>
       </View>
     );
   }
