@@ -13,23 +13,13 @@ import {Card, SearchBar} from "react-native-elements";
 
 const data = [
     {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/InsurathonCover.png",
     }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something two"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png",
     }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something three"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/HoliCover.png",
     }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something four"
-    }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something five"
-    }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something six"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/ConcertCover.png",
     }
 ];
 
@@ -60,13 +50,13 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
 
                       return (
                         <TouchableOpacity style = {styles.coverContainer}>
                         <Image
                           style={styles.coverImage}
-                          source={require('../resources/InsurathonCover.png')}
+                          source={{ uri: item.imageUrl }}
                         />
                         </TouchableOpacity>
                       );
@@ -86,12 +76,12 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
                       return (
                         <TouchableOpacity style = {styles.coverContainer}>
                         <Image
                           style={styles.coverImage}
-                          source={require('../resources/InsurathonCover.png')}
+                          source={{ uri: item.imageUrl }}
                         />
                         </TouchableOpacity>
                       );
@@ -110,12 +100,12 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
                       return (
                         <TouchableOpacity style = {styles.coverContainer}>
                         <Image
                           style={styles.coverImage}
-                          source={require('../resources/InsurathonCover.png')}
+                          source={{ uri: item.imageUrl }}
                         />
                         </TouchableOpacity>
                       );
@@ -133,12 +123,12 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
                       return (
                         <TouchableOpacity style = {styles.coverContainer}>
                         <Image
                           style={styles.coverImage}
-                          source={require('../resources/InsurathonCover.png')}
+                          source={{ uri: item.imageUrl }}
                         />
                         </TouchableOpacity>
                       );
@@ -176,7 +166,9 @@ const styles = StyleSheet.create({
      coverImage: {
          height:160,
          width: 160,
-         marginRight: 8
+         marginRight: 8,
+         borderRadius: 3,
+         resizeMode: 'cover'
      },
      coverContainer : {
          marginLeft: 12
