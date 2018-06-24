@@ -102,7 +102,9 @@ marginTop: 20
 
       <Card
 
-      image={require('../resources/detail/Basic.png')}
+      //TODO fit to size of card
+      //TODO loop for every damage
+      image={require('../resources/detail/umbrella.png')}
 
         containerStyle={{ padding: 0, width: 200, height: 100 }}
       >
@@ -227,6 +229,7 @@ const styles = StyleSheet.create({
     flex:1,
     alignSelf:'stretch',
     height:150,
+    width:'100%'
   },
 
   heading:{
