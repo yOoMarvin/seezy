@@ -34,11 +34,6 @@ export default class Startkomponente extends Component {
     render() {
         return (
             <ScrollView>
-              <SearchBar
-              lightTheme
-              placeholder = 'Suche...'
-              containerStyle = {styles.searchContainer}
-              inputStyle = {styles.searchInput} />
               <View style={styles.categoryContainer}>
                 <Text style={styles.categoryTitle}>
                     Empfohlen
@@ -53,7 +48,9 @@ export default class Startkomponente extends Component {
                   renderItem={({item}) => {
 
                       return (
-                        <TouchableOpacity style = {styles.coverContainer}>
+                        <TouchableOpacity 
+                            style = {styles.coverContainer}
+                            onPress={() => this.props.navigation.navigate('Details')}>
                         <Image
                           style={styles.coverImage}
                           source={{ uri: item.imageUrl }}
@@ -78,7 +75,9 @@ export default class Startkomponente extends Component {
                   data={this.state.data}
                   renderItem={({item}) => {
                       return (
-                        <TouchableOpacity style = {styles.coverContainer}>
+                        <TouchableOpacity 
+                            style = {styles.coverContainer}
+                            onPress={() => console.log('puff')}>
                         <Image
                           style={styles.coverImage}
                           source={{ uri: item.imageUrl }}
@@ -145,7 +144,6 @@ const styles = StyleSheet.create({
     categoryContainer: {
         marginLeft: 12,
         marginRight: 12,
-        marginTop: 32,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
@@ -153,22 +151,13 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold'
     },
-    searchContainer: {
-      backgroundColor: 'white',
-      borderWidth: 0, //no effect
-      shadowColor: 'white', //no effect
-      borderBottomColor: 'transparent',
-      borderTopColor: 'transparent'
-     },
-     searchInput: {
-       backgroundColor: 'lightgrey'
-     },
      coverImage: {
          height:160,
          width: 160,
          marginRight: 8,
          borderRadius: 3,
-         resizeMode: 'cover'
+         resizeMode: 'cover',
+         marginBottom: 32
      },
      coverContainer : {
          marginLeft: 12

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import {FlatList, View, Image, Text, ActivityIndicator, TouchableOpacity, ScrollView, StyleSheet} from "react-native";
-//import {List} from "react-native-elements";
-//import firebase from 'react-native-firebase';
-import { createBottomTabNavigator } from 'react-navigation';
+import {SearchBar} from "react-native-elements";
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
 //Import der Screen-Komponenten und des Footers, wo die Navigtion stattfindet
 import Startkomponente from './components/Startkomponente';
@@ -17,6 +16,17 @@ import Icon from 'react-native-elements';
 
 class Startscreen extends Component{
   static navigationOptions = {
+    headerTitle: <SearchBar
+                    lightTheme
+                    placeholder = 'Suche...'
+                    containerStyle = {{backgroundColor: 'transparent',
+                                      borderWidth: 0, //no effect
+                                      shadowColor: 'white', //no effect
+                                      borderBottomColor: 'transparent',
+                                      borderTopColor: 'transparent',
+                                      width: '100%'}}
+                    inputStyle = {{ backgroundColor: 'lightgrey' }}
+                     />,
     tabBarLabel: 'EVENT',
     tabBarIcon: ({ tintColor }) => (
       <Image
@@ -31,6 +41,14 @@ class Startscreen extends Component{
      <Startkomponente navigation = {this.props.navigation}/>
     </View>
 
+    );
+  }
+}
+
+class DetailsScreen extends Component {
+  render() {
+    return(
+      <Detailskomponente navigation={this.props.navigation} />
     );
   }
 }
@@ -93,11 +111,15 @@ class Profilscreen extends Component {
 }
 
 
+const EventStack = createStackNavigator({
+  Home: Startscreen,
+  Details: DetailsScreen,
+});
+
+
 export default createBottomTabNavigator(
   {
-    Start: {
-      screen: Startscreen
-    },
+    Start: EventStack,
     Booked: {
       screen: Bookedscreen
     },
@@ -139,5 +161,5 @@ const styles = StyleSheet.create({
   iconUser: {
     width: 18,
     height: 20
-  }
+  },
 });
