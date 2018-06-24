@@ -113,7 +113,12 @@ class Profilscreen extends Component {
 
 const EventStack = createStackNavigator({
   Home: Startscreen,
-  Details: DetailsScreen,
+  Details: {
+     screen:DetailsScreen,
+     navigationOptions: {
+       headerTintColor: '#EB5757',
+     }
+    },
 });
 
 

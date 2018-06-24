@@ -45,182 +45,165 @@ export default class Detailskomponente extends Component {
   render() {
     return(
       <ScrollView>
-<View>
-      <Image source={require('../resources/detail/publicviewing.jpg')}
-      style = {styles.headerImage}
-      />
-      <Text style={styles.heading}> Public Viewing </Text>
+        <View>
+          <Image source={require('../resources/detail/publicviewing.jpg')}
+          style = {styles.headerImage}
+          />
+          <Text style={styles.heading}> Public Viewing </Text>
 
-      <View style ={styles.row}>
-      <Image source={require('../resources/detail/mappin.png')}
-      style = {styles.icon}
-      />
-      <Text>Biergarten Schlosspark, Stuttgart</Text>
-      </View>
+          <View style ={styles.row}>
+            <Image 
+              source={require('../resources/detail/mappin.png')}
+              style = {styles.icon}
+            />
+            <Text>Biergarten Schlosspark, Stuttgart</Text>
+          </View>
 
-      <View style ={styles.row}>
-      <Image source={require('../resources/detail/clock.png')}
-      style = {styles.icon}
-      />
-      <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
-      </View>
+          <View style ={styles.row}>
+            <Image 
+              source={require('../resources/detail/clock.png')}
+              style = {styles.icon}
+            />
+            <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
+          </View>
 
-      <View
-  style={{
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    marginTop: 20
-  }}
-  />
+          <View
+            style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+            }}/>
 
-  </View>
-  <View style={{
-    marginTop: 20,
-    padding: 5
-  }}>
-    <Text> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-    At vero eos et accusam ...</Text>
-  </View>
+        </View>
+        <View style={{
+          marginTop: 20,
+          padding: 5
+        }}>
+          <Text> 
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+            At vero eos et accusam ...
+          </Text>
+        </View>
 
-  <View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
+        <View
+          style={{
+          borderBottomColor: 'black',
+          borderBottomWidth: 1,
+          marginTop: 20
+          }}/>
 
-<View>
-<Text>Zu beachten </Text>
-<FlatList
-  horizontal
-  data={this.state.data}
-  renderItem={({ item }) => {
+        <View>
+          <Text>Zu beachten </Text>
+            <FlatList
+              horizontal
+              data={this.state.data}
+              renderItem={({ item }) => {
 
-    return (
+                return (
+                  <Card
+                  //TODO fit to size of card
+                  //TODO loop for every damage
+                  image={{ uri: item.url }}
+                  imageStyle={{width:'100%', height:'100%'}}
 
-      <Card
-
-      //TODO fit to size of card
-      //TODO loop for every damage
-      image={{ uri: item.url }}
-      imageStyle={{width:'100%', height:'100%'}}
-
-        containerStyle={{ padding: 0, width: 200, height: 100 }}
-      >
-
-
-      </Card>
-    );
-  }}
-  keyExtractor={(item, index) => index}
-/>
-</View>
-
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
+                    containerStyle={{ padding: 0, width: 200, height: 100 }}
+                  >
 
 
-<View style ={styles.packages}>
+                  </Card>
+                );
+              }}
+              keyExtractor={(item, index) => index}
+            />
+        </View>
 
-<Card
-  image={require('../resources/detail/Basic.png')}
-  containerStyle={{ padding: 0, width: 150 }}
->
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<View style={styles.container}>
-<Text style={styles.price}> 5,99€ </Text>
-</View>
-
-<Button title='Auswählen' color='#F2C94C' />
-
-</Card>
-
-<Card
-  image={require('../resources/detail/Top.png')}
-  containerStyle={{ padding: 0, width: 150 }}
->
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<Text>Lorem </Text>
-
-<View
-style={{
-borderBottomColor: 'black',
-borderBottomWidth: 1,
-marginTop: 20
-}}
-/>
-<View style={styles.container}>
-<Text style={styles.price}> 8,99€ </Text>
-</View>
-
-<Button title='Auswählen' color='#27AE60' />
-
-</Card>
-</View>
+        <View
+          style={{
+          borderBottomColor: 'black',
+          borderBottomWidth: 1,
+          marginTop: 20
+          }}/>
 
 
+          <View style ={styles.packages}>
+            <Card
+              image={require('../resources/detail/Basic.png')}
+              containerStyle={{ padding: 0, width: 150 }}>
+              <Text>Lorem </Text>
+              <View
+                style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                marginTop: 20
+                }}
+                />
+              <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }}/>
+            <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }}/>
+            <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }}/>
+            <View style={styles.container}>
+              <Text style={styles.price}> 5,99€ </Text>
+            </View>
+            <Button title='Auswählen' color='#F2C94C' />
+          </Card>
+
+          <Card
+            image={require('../resources/detail/Top.png')}
+            containerStyle={{ padding: 0, width: 150 }}>
+            <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }} />
+            <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }} />
+            <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }} />
+            <Text>Lorem </Text>
+            <View
+              style={{
+              borderBottomColor: 'black',
+              borderBottomWidth: 1,
+              marginTop: 20
+              }} />
+            <View style={styles.container}>
+              <Text style={styles.price}> 8,99€ </Text>
+            </View>
+
+            <Button title='Auswählen' color='#27AE60' />
+
+          </Card>
+        </View>
       </ScrollView>
     );
 
