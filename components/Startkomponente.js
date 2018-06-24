@@ -5,29 +5,21 @@ import {
     ScrollView,
     StyleSheet,
     View,
-    Button
+    Button,
+    TouchableOpacity,
+    Image
 } from "react-native";
 import {Card, SearchBar} from "react-native-elements";
 
 const data = [
     {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/InsurathonCover.png",
     }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something two"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png",
     }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something three"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/HoliCover.png",
     }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something four"
-    }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something five"
-    }, {
-        imageUrl: "http://via.placeholder.com/160x160",
-        title: "something six"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/ConcertCover.png",
     }
 ];
 
@@ -42,11 +34,6 @@ export default class Startkomponente extends Component {
     render() {
         return (
             <ScrollView>
-              <SearchBar
-              lightTheme
-              placeholder = 'Suche...'
-              containerStyle = {styles.searchContainer}
-              inputStyle = {styles.searchInput} />
               <View style={styles.categoryContainer}>
                 <Text style={styles.categoryTitle}>
                     Empfohlen
@@ -58,18 +45,17 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
 
                       return (
-
-                          <Card
-                              image={{
-                                  uri: rowData.imageUrl
-                              }}
-                              containerStyle={{
-                                  padding: 0,
-                                  width: 200
-                              }}></Card>
+                        <TouchableOpacity 
+                            style = {styles.coverContainer}
+                            onPress={() => this.props.navigation.navigate('Details')}>
+                        <Image
+                          style={styles.coverImage}
+                          source={{ uri: item.imageUrl }}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -87,11 +73,16 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
                       return (
-                          <Card
-                              image={{ uri: rowData.imageUrl }}
-                              containerStyle={{ padding: 0, width: 200 }}></Card>
+                        <TouchableOpacity 
+                            style = {styles.coverContainer}
+                            onPress={() => console.log('puff')}>
+                        <Image
+                          style={styles.coverImage}
+                          source={{ uri: item.imageUrl }}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -108,11 +99,14 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
                       return (
-                          <Card
-                              image={{ uri: rowData.imageUrl}}
-                              containerStyle={{ padding: 0,width: 200 }}></Card>
+                        <TouchableOpacity style = {styles.coverContainer}>
+                        <Image
+                          style={styles.coverImage}
+                          source={{ uri: item.imageUrl }}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -128,11 +122,14 @@ export default class Startkomponente extends Component {
               <FlatList
                   horizontal
                   data={this.state.data}
-                  renderItem={({item: rowData}) => {
+                  renderItem={({item}) => {
                       return (
-                          <Card
-                              image={{ uri: rowData.imageUrl }}
-                              containerStyle={{ padding: 0, width: 200 }}></Card>
+                        <TouchableOpacity style = {styles.coverContainer}>
+                        <Image
+                          style={styles.coverImage}
+                          source={{ uri: item.imageUrl }}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -147,7 +144,6 @@ const styles = StyleSheet.create({
     categoryContainer: {
         marginLeft: 12,
         marginRight: 12,
-        marginTop: 32,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
@@ -155,14 +151,15 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: 'bold'
     },
-    searchContainer: {
-      backgroundColor: 'white',
-      borderWidth: 0, //no effect
-      shadowColor: 'white', //no effect
-      borderBottomColor: 'transparent',
-      borderTopColor: 'transparent'
+     coverImage: {
+         height:160,
+         width: 160,
+         marginRight: 8,
+         borderRadius: 3,
+         resizeMode: 'cover',
+         marginBottom: 32
      },
-     searchInput: {
-       backgroundColor: 'lightgrey'
+     coverContainer : {
+         marginLeft: 12
      }
 });

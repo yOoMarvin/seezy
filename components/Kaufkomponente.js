@@ -98,7 +98,7 @@ export default class Kaufkomponente extends Component {
 
 
           <View style={styles.row}>
-            <Image source={require('../resources/detail/mappin.png')}
+            <Image source={require('../resources/detail/map-pin.png')}
               style={styles.icon}
             />
             <Text style={styles.textdesc}>Biergarten Schlosspark, Stuttgart</Text>
@@ -110,6 +110,7 @@ export default class Kaufkomponente extends Component {
             />
             <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
           </View>
+  
 
           <View
             style={{
