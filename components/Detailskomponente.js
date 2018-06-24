@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button } from "react-native";
-import { Card } from "react-native-elements";
+import { Card, ListItem } from "react-native-elements";
 
 const data =[
   {
-    imageUrl: "../resources/detail/credit-card.png",
+    imageUrl: "../resources/detail/creditcard.png",
     title: "something"
   },
   {
@@ -27,7 +27,7 @@ const data =[
   },
 
   {
-    imageUrl: "../resources/detail/tooth.png",
+    imageUrl: "../resources/detail/teeth.png",
     title: "something3"
   }
 ];
@@ -96,7 +96,7 @@ marginTop: 20
 <FlatList
   horizontal
   data={this.state.data}
-  renderItem={({ item: rowData }) => {
+  renderItem={({ item }) => {
 
     return (
 
@@ -104,10 +104,13 @@ marginTop: 20
 
       //TODO fit to size of card
       //TODO loop for every damage
-      image={require('../resources/detail/umbrella.png')}
+      image={{ uri: item.url }}
+      imageStyle={{width:'100%', height:'100%'}}
 
         containerStyle={{ padding: 0, width: 200, height: 100 }}
       >
+
+
       </Card>
     );
   }}

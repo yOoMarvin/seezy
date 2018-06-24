@@ -53,26 +53,26 @@ export default class Kaufkomponente extends Component {
         <View style ={styles.packages}>
 
           <View>
-          <Image source={require('../resources/detail/umbrella.png')}
-          style={styles.image}/>
+            <Image source={require('../resources/detail/umbrella.png')}
+            style={styles.image}/>
           </View>
 
-            <View>
+          <View>
               <Image source={require('../resources/detail/thief.png')}
               style={styles.image}/>
-        </View>
+          </View>
 
-      </View>
+        </View>
 
       <View style ={styles.packages}>
 
         <View>
-        <Image source={require('../resources/detail/tooth.png')}
+        <Image source={require('../resources/detail/teeth.png')}
         style={styles.image}/>
         </View>
 
         <View>
-        <Image source={require('../resources/detail/credit-card.png')}
+        <Image source={require('../resources/detail/creditcard.png')}
         style={styles.image}/>
         </View>
 
@@ -93,7 +93,7 @@ export default class Kaufkomponente extends Component {
   <Image source={require('../resources/detail/mappin.png')}
   style = {styles.icon}
   />
-  <Text>Biergarten Schlosspark, Stuttgart</Text>
+  <Text style={styles.textdesc}>Biergarten Schlosspark, Stuttgart</Text>
   </View>
 
   <View style ={styles.row}>
@@ -149,27 +149,33 @@ const styles = StyleSheet.create({
   },
 
   heading:{
-    fontSize:30
+    fontSize:30,
+    fontWeight: 'bold',
+    marginTop: 20
   },
 
   row: {
     flexDirection:'row',
     justifyContent:'space-around',
-    marginTop: 20
+    marginTop: 20,
+    height: 110,
+    width: '100%'
   },
 
   icon:{
-    width:35,
-    height:40
+    width:'12%',
+    height:50
   },
 
 //TODO size anpassen
   packages: {
+    marginTop: 10,
     flexDirection:'row',
     justifyContent:'space-around',
-    width:100,
-    height:50
+    //width:'100%',
+    height:80
   },
+
   container:{
     alignItems:'center',
   },
@@ -180,17 +186,16 @@ const styles = StyleSheet.create({
   },
 
   image:{
-    height:20,
-    width:20
-
+    height:80,
+    width:200
   },
 
   payOptions:{
     width:150,
-    height:100
+    height:80
+  },
+  textdesc:{
+    fontSize:15
   }
-
-
-
 
 });

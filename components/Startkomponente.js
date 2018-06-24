@@ -51,7 +51,7 @@ export default class Startkomponente extends Component {
                 <Text style={styles.categoryTitle}>
                     Empfohlen
                 </Text>
-                <Button 
+                <Button
                   title= "Mehr"
                   color= "#EB5757"/>
               </View>
@@ -79,7 +79,7 @@ export default class Startkomponente extends Component {
                 <Text style ={styles.categoryTitle}>
                     Konzerte
                 </Text>
-                <Button 
+                <Button
                   title= "Mehr"
                   color= "#EB5757"/>
               </View>
@@ -100,7 +100,7 @@ export default class Startkomponente extends Component {
                 <Text style={styles.categoryTitle}>
                     Sport
                 </Text>
-                <Button 
+                <Button
                   title= "Mehr"
                   color= "#EB5757"/>
               </View>
@@ -121,7 +121,7 @@ export default class Startkomponente extends Component {
                 <Text style={styles.categoryTitle}>
                     Kultur
                 </Text>
-                <Button 
+                <Button
                   title= "Mehr"
                   color= "#EB5757"/>
               </View>
