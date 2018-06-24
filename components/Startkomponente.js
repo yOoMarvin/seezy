@@ -5,7 +5,9 @@ import {
     ScrollView,
     StyleSheet,
     View,
-    Button
+    Button,
+    TouchableOpacity,
+    Image
 } from "react-native";
 import {Card, SearchBar} from "react-native-elements";
 
@@ -61,15 +63,12 @@ export default class Startkomponente extends Component {
                   renderItem={({item: rowData}) => {
 
                       return (
-
-                          <Card
-                              image={{
-                                  uri: rowData.imageUrl
-                              }}
-                              containerStyle={{
-                                  padding: 0,
-                                  width: 200
-                              }}></Card>
+                        <TouchableOpacity style = {styles.coverContainer}>
+                        <Image
+                          style={styles.coverImage}
+                          source={require('../resources/InsurathonCover.png')}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -89,9 +88,12 @@ export default class Startkomponente extends Component {
                   data={this.state.data}
                   renderItem={({item: rowData}) => {
                       return (
-                          <Card
-                              image={{ uri: rowData.imageUrl }}
-                              containerStyle={{ padding: 0, width: 200 }}></Card>
+                        <TouchableOpacity style = {styles.coverContainer}>
+                        <Image
+                          style={styles.coverImage}
+                          source={require('../resources/InsurathonCover.png')}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -110,9 +112,12 @@ export default class Startkomponente extends Component {
                   data={this.state.data}
                   renderItem={({item: rowData}) => {
                       return (
-                          <Card
-                              image={{ uri: rowData.imageUrl}}
-                              containerStyle={{ padding: 0,width: 200 }}></Card>
+                        <TouchableOpacity style = {styles.coverContainer}>
+                        <Image
+                          style={styles.coverImage}
+                          source={require('../resources/InsurathonCover.png')}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -130,9 +135,12 @@ export default class Startkomponente extends Component {
                   data={this.state.data}
                   renderItem={({item: rowData}) => {
                       return (
-                          <Card
-                              image={{ uri: rowData.imageUrl }}
-                              containerStyle={{ padding: 0, width: 200 }}></Card>
+                        <TouchableOpacity style = {styles.coverContainer}>
+                        <Image
+                          style={styles.coverImage}
+                          source={require('../resources/InsurathonCover.png')}
+                        />
+                        </TouchableOpacity>
                       );
                   }}
                   keyExtractor={(item, index) => index}/>
@@ -164,5 +172,13 @@ const styles = StyleSheet.create({
      },
      searchInput: {
        backgroundColor: 'lightgrey'
+     },
+     coverImage: {
+         height:160,
+         width: 160,
+         marginRight: 8
+     },
+     coverContainer : {
+         marginLeft: 12
      }
 });
