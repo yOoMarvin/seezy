@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 
-const data = [
+const data =[
   {
     imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/shield.png",
     text: "Diebstahl",
@@ -36,7 +36,7 @@ export default class Detailskomponente extends Component {
   }
 
   render() {
-    return (
+    return(
       <ScrollView>
         <View>
           <Image source={require('../resources/detail/hackathon.jpg')}
@@ -98,7 +98,7 @@ export default class Detailskomponente extends Component {
               containerStyle={{ padding: 0, width: 150 }}>
               <Text style={{ marginTop:16, alignSelf:'center'}}>Haftpflicht </Text>
               <View style={styles.horizontalDivider}/>
-              <Text style={styles.packageTextNegative}>Kaffe Flatrate </Text>
+              <Text style={styles.packageTextNegative}>Diebstahl </Text>
               <View style={styles.horizontalDivider}/>
               <Text style={styles.packageTextNegative}>Comfort Bett </Text>
               <View style={styles.horizontalDivider}/>
@@ -113,7 +113,7 @@ export default class Detailskomponente extends Component {
             containerStyle={{ padding: 0, width: 150 }}>
             <Text style={{ marginTop:16, alignSelf:'center'}}>Haftpflicht </Text>
             <View style={styles.horizontalDivider}/>
-            <Text style={styles.packageText}>Kaffe Flatrate </Text>
+            <Text style={styles.packageText}>Diebstahl </Text>
             <View style={styles.horizontalDivider}/>
             <Text style={styles.packageTextNegative}>Comfort Bett </Text>
             <View style={styles.horizontalDivider}/>

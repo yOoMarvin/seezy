@@ -3,44 +3,9 @@ import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button, TouchableO
 import { Card } from "react-native-elements";
 import PopupDialog from 'react-native-popup-dialog';
 
-const data = [
-  {
-    imageUrl: "../resources/detail/credit-card.png",
-    title: "something"
-  },
-  {
-    imageUrl: "../resources/detail/shield.png",
-    title: "something2"
-  },
-  {
-    imageUrl: "../resources/detail/umbrella.png",
-    title: "something3"
-  },
-
-  {
-    imageUrl: "../resources/detail/navigation.png",
-    title: "something3"
-  },
-
-  {
-    imageUrl: "../resources/detail/thief.png",
-    title: "something3"
-  },
-
-  {
-    imageUrl: "../resources/detail/tooth.png",
-    title: "something3"
-  }
-];
-
-
-
 export default class Kaufkomponente extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: data
-    };
   }
 
   showAlert() {
@@ -53,76 +18,75 @@ export default class Kaufkomponente extends Component {
   render() {
     return (
       <ScrollView>
-
         <View>
-          <Image source={require('../resources/detail/publicviewing.jpg')} style={styles.headerImage} />
+          <Image source={require('../resources/detail/hackathon.jpg')} style={styles.headerImage} />
           <Text style={styles.heading}> Mein Schutz - Basic </Text>
 
-          <View style={styles.packages}>
-
-            <View>
-              <Image source={require('../resources/detail/umbrella.png')}
-                style={styles.image} />
-            </View>
-
-            <View>
-              <Image source={require('../resources/detail/thief.png')}
-                style={styles.image} />
-            </View>
-
-          </View>
-
-          <View style={styles.packages}>
-
-            <View>
-              <Image source={require('../resources/detail/teeth.png')}
-                style={styles.image} />
-            </View>
-
-            <View>
-              <Image source={require('../resources/detail/creditcard.png')}
-                style={styles.image} />
-            </View>
-
-          </View>
-
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-            }}
-          />
-
-          <Text style={styles.heading}> Public Viewing </Text>
-
-
           <View style={styles.row}>
-            <Image source={require('../resources/detail/map-pin.png')}
-              style={styles.icon}
-            />
-            <Text style={styles.textdesc}>Biergarten Schlosspark, Stuttgart</Text>
+            <Card containerStyle={{ padding: 0, width: 175, backgroundColor: 'lightgrey' }}>
+              <View style={[styles.dangerContainer, {backgroundColor: 'lightgrey'}]}>
+                <Image
+                  style={{width: 20, height: 24}}
+                  source={{ uri: 'https://s3.eu-central-1.amazonaws.com/seezy-images/shield.png'}}/>
+                <Text style={{textDecorationLine: 'line-through'}}> Diebstahl </Text>
+              </View>
+            </Card>
+            <Card containerStyle={{ padding: 0, width: 175 }}>
+              <View style={styles.dangerContainer}>
+                <Image
+                  style={{width: 20, height: 26}}
+                  source={{ uri: 'https://s3.eu-central-1.amazonaws.com/seezy-images/dollar-sign.png'}}/>
+                <Text> Haftplicht </Text>
+              </View>
+            </Card>
           </View>
 
           <View style={styles.row}>
-            <Image source={require('../resources/detail/clock.png')}
-              style={styles.icon}
-            />
-            <Text>Sa. 30.06.2018 20:00 Uhr {"\n"} bis {"\n"} Sa. 30.06.2017 23:00 Uhr</Text>
+            <Card containerStyle={{ padding: 0, width: 175, backgroundColor: 'lightgrey'}}>
+              <View style={[styles.dangerContainer, {backgroundColor: 'lightgrey'}]}>
+                <Image
+                  style={{width: 20, height: 24}}
+                  source={{ uri: 'https://s3.eu-central-1.amazonaws.com/seezy-images/bell.png'}}/>
+                <Text style={{textDecorationLine: 'line-through'}}> Comfort Bett </Text>
+              </View>
+            </Card>
+            <Card containerStyle={{ padding: 0, width: 175, backgroundColor: 'lightgrey'}}>
+              <View style={[styles.dangerContainer, {backgroundColor: 'lightgrey'}]}>
+                <Image
+                  style={{width: 20, height: 24}}
+                  source={{ uri: 'https://s3.eu-central-1.amazonaws.com/seezy-images/activity.png'}}/>
+                <Text style={{textDecorationLine: 'line-through'}}> Kaffee Flatrate </Text>
+              </View>
+            </Card>
           </View>
-  
 
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-            }}
-          />
+          <View style= {styles.horizontalDivider}/>
 
-          <Text style={styles.heading}> Bezahlen </Text>
+          <View>
+            <Text style={styles.subheading}> SV Insurathon </Text>
 
-          <View style={styles.row}>
+            <View style ={styles.kurzinfo}>
+              <Image 
+                source={require('../resources/detail/map-pin.png')}
+                style = {styles.iconPin}
+              />
+              <Text style={styles.eventDetailText}>SparkassenVersicherung, Stuttgart</Text>
+            </View>
+
+            <View style ={styles.kurzinfo}>
+              <Image 
+                source={require('../resources/detail/clock.png')}
+                style = {styles.iconClock}
+              />
+              <Text style={styles.eventDetailText}>Sa. 23.06.2018 09:00 Uhr {"\n"}bis {"\n"}Mo. 25.06.2018 20:00 Uhr</Text>
+            </View>
+          </View>
+
+          <View style= {styles.horizontalDivider}/>
+
+          <Text style={styles.subheading}> Bezahlen </Text>
+
+          <View style={styles.payment}>
 
             <TouchableOpacity>
               <Image source={require('../resources/pay/paydirekt.png')} style={styles.payOptions} />
@@ -141,12 +105,10 @@ export default class Kaufkomponente extends Component {
           </View>
 
           <View style={styles.popup}>
-            <Button
-              title="Absichern"
-              color='#27AE60'
-              onPress={this.showAlert}
-
-            />
+          <TouchableOpacity onPress={this.showAlert} style={{width: '60%', backgroundColor:'#27AE60', padding: 12, borderRadius: 3, alignItems: 'center',
+    justifyContent: 'center', marginBottom: 12}}>
+            <Text style={{color: 'white'}}>ABSICHERN</Text>
+          </TouchableOpacity>
 
           </View>
         </View>
@@ -165,22 +127,52 @@ const styles = StyleSheet.create({
   },
 
   heading: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginTop: 20
+    marginTop: 12,
+    fontSize:36,
+    fontWeight: 'bold'
   },
-
+  subheading:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 12
+  },
+  dangerContainer: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    marginTop: 16,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 20,
-    height: 110,
+    marginTop: 10,
+    height: 80,
+    width: '100%'
+  },
+  payment: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 10,
+    height: 100,
+    width: '100%'
+  },
+  kurzinfo: {
+    flexDirection: 'row',
+    marginTop: 12,
+    height: 50,
     width: '100%'
   },
 
-  icon: {
-    width: '12%',
-    height: 50
+  iconPin:{
+    marginLeft: 12,
+    width:24,
+    height:28
+  },
+  iconClock:{
+    marginLeft: 12,
+    width:24,
+    height:24
   },
 
   //TODO size anpassen
@@ -191,7 +183,10 @@ const styles = StyleSheet.create({
     //width:'100%',
     height: 80
   },
-
+  eventDetailText: {
+    marginLeft: 32,
+    marginRight:32
+  },
   container: {
     alignItems: 'center',
   },
@@ -208,7 +203,7 @@ const styles = StyleSheet.create({
 
   payOptions: {
     width: 150,
-    height: 80
+    height: 100
   },
   textdesc: {
     fontSize: 15
@@ -218,6 +213,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  horizontalDivider: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
+    marginTop: 32,
+    marginBottom: 32,
+    width: '80%',
+    justifyContent:'center',
+    alignSelf: 'center'
   }
 
 });
