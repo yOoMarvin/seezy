@@ -27,17 +27,10 @@ class Startscreen extends Component{
                                       width: '100%'}}
                     inputStyle = {{ backgroundColor: 'lightgrey' }}
                      />,
-    tabBarLabel: 'EVENT',
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('./resources/nav/calendar.png')}
-        style={[styles.iconCalendar, { tintColor: tintColor }]}
-      />
-    )
   };
   render(){
     return(
-    <View style = {{flex:1, marginTop:30}}>
+    <View style = {{flex:1, marginTop:24}}>
      <Startkomponente navigation = {this.props.navigation}/>
     </View>
 
@@ -158,7 +151,18 @@ const EventStack = createStackNavigator({
 
 export default createBottomTabNavigator(
   {
-    Start: EventStack,
+    Start: {
+      screen: EventStack,
+      navigationOptions: {
+        tabBarLabel: 'EVENT',
+        tabBarIcon: ({ tintColor }) => (
+          <Image
+            source={require('./resources/nav/calendar.png')}
+            style={[styles.iconCalendar, { tintColor: tintColor }]}
+          />
+        )
+      }
+    },
     Booked: {
       screen: Bookedscreen
     },
