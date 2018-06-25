@@ -9,8 +9,7 @@ import Detailskomponente from './components/Detailskomponente';
 import Chat from './components/Chat';
 import Kaufkomponente from './components/Kaufkomponente';
 import Bookedkomponente from './components/Bookedkomponente';
-
-import Icon from 'react-native-elements';
+import Freebie from './components/Freebie';
 
 
 //firebase.database().goOnline();
@@ -50,6 +49,14 @@ class DetailsScreen extends Component {
   render() {
     return(
       <Detailskomponente navigation={this.props.navigation} />
+    );
+  }
+}
+
+class FreebieScreen extends Component {
+  render() {
+    return(
+      <Freebie navigation={this.props.navigation} />
     );
   }
 }
@@ -136,6 +143,12 @@ const EventStack = createStackNavigator({
   },
   Booked: {
     screen:Bookedscreen,
+    navigationOptions: {
+      headerTintColor: '#EB5757'
+    }
+  },
+  Freebie: {
+    screen:FreebieScreen,
     navigationOptions: {
       headerTintColor: '#EB5757'
     }

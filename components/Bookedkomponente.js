@@ -74,7 +74,9 @@ export default class Bookedkomponente extends Component {
               source={require('../resources/gift.png')}
               style = {styles.iconGift}
             />
-              <Text style={{color: '#EB5757', padding: 0, marginLeft: 12}}>Freigetränk sichern</Text>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Freebie')} containerStyle={{ padding: 0}}>
+              <Text style={{color: '#EB5757', marginLeft: 12 }}>Freigetränk sichern</Text>
+            </TouchableOpacity>
           </View>
         </Card>
 
@@ -82,7 +84,7 @@ export default class Bookedkomponente extends Component {
 
         <Text style={styles.subheading}> Beendet </Text>
 
-        <Image source={require('../resources/publicviewing-booked.png')}  style={{height: 180, width: '95%', marginLeft: 12, marginRight: 12}}/>
+        <Image source={require('../resources/publicviewing-booked.png')}  style={{height: 180, width: '95%', marginLeft: 12, marginRight: 12, marginBottom: 12}}/>
 
       </ScrollView>
     );
