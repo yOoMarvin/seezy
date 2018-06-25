@@ -58,13 +58,14 @@ export default class Bookedkomponente extends Component {
         </View>
 
         <Card
-          image={require('../resources/detail/currentbooked.png')}
+          image={require('../resources/Insurathon-Booked.png')}
           containerStyle={{ width: '95%' }}
+          imageStyle={{ height: 180}}
         >
           <Text style={[styles.subheading, styles.centerText]}>SV Insurathon</Text>
           <View style={styles.horizontalDivider}/>
-          <Text style={styles.centerText}>Biergarten Schlosspark {"\n"}</Text>
-          <Text style={styles.centerText}> 30.06.2018 </Text>
+          <Text style={styles.centerText}>Am Löwentor {"\n"}</Text>
+          <Text style={styles.centerText}> Vom 23.06.208 bis 25.06.2018 </Text>
           <View style={styles.horizontalDivider}/>
           <Text style={styles.centerText}>Mein Schutz: Basic </Text>
           <View style={styles.horizontalDivider}/>
@@ -73,24 +74,15 @@ export default class Bookedkomponente extends Component {
               source={require('../resources/gift.png')}
               style = {styles.iconGift}
             />
-            <TouchableOpacity style={{marginLeft: 12}}>
-              <Text style={{color: '#EB5757', padding: 0}}>Freigetränk sichern</Text>
-            </TouchableOpacity>
+              <Text style={{color: '#EB5757', padding: 0, marginLeft: 12}}>Freigetränk sichern</Text>
           </View>
-
         </Card>
 
         <View style={styles.horizontalDivider}/>
 
         <Text style={styles.subheading}> Beendet </Text>
 
-        <Card
-          containerStyle={{ width: '95%' }}
-        >
-          <View style={styles.row}>
-            
-          </View>
-        </Card>
+        <Image source={require('../resources/publicviewing-booked.png')}  style={{height: 180, width: '95%', marginLeft: 12, marginRight: 12}}/>
 
       </ScrollView>
     );
@@ -168,8 +160,8 @@ const styles = StyleSheet.create({
   horizontalDivider: {
     borderBottomColor: 'lightgrey',
     borderBottomWidth: 1,
-    marginTop: 32,
-    marginBottom: 32,
+    marginTop: 24,
+    marginBottom: 24,
     width: '80%',
     justifyContent:'center',
     alignSelf: 'center'

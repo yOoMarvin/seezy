@@ -93,7 +93,7 @@ export default class Kaufkomponente extends Component {
           </View>
 
           <View style={{alignItems: 'center', justifyContent: 'center', marginTop: 8, marginBottom: 8}}>
-            <Text style={styles.price}> 5,99€ </Text>
+            <Text style={styles.price}> 3,99€ </Text>
           </View>
 
           <View style={styles.popup}>
