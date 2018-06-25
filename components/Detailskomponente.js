@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button } from "react-native";
+import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button, Share, TouchableOpacity } from "react-native";
 import { Card } from "react-native-elements";
 
 const data =[
@@ -35,6 +35,16 @@ export default class Detailskomponente extends Component {
     };
   }
 
+  shareMessage ()
+    {
+          Share.share(
+          {
+              
+            message: 'Seezy - Dein Begleiter für Events'
+          
+          }).then(result => console.log(result)).catch(errorMsg => console.log(errorMsg));
+    }
+
   render() {
     return(
       <ScrollView>
@@ -42,7 +52,12 @@ export default class Detailskomponente extends Component {
           <Image source={require('../resources/detail/hackathon.jpg')}
           style = {styles.headerImage}
           />
-          <Text style={styles.heading}> SV Insurathon </Text>
+          <View style ={styles.row}>
+            <Text style={styles.heading}> SV Insurathon </Text>
+            <TouchableOpacity onPress={this.shareMessage}>
+                <Image source={require("../resources/share.png")} style={{height: 24, width: 22, marginTop: 26, marginLeft: 16}} />
+            </TouchableOpacity>
+          </View>
 
           <View style ={styles.row}>
             <Image 
@@ -95,7 +110,7 @@ export default class Detailskomponente extends Component {
           <View style ={styles.packages}>
             <Card
               image={require('../resources/detail/Basic.png')}
-              containerStyle={{ padding: 0, width: 150 }}>
+              containerStyle={{ padding: 0, width: 180 }}>
               <Text style={{ marginTop:16, alignSelf:'center'}}>Haftpflicht </Text>
               <View style={styles.horizontalDivider}/>
               <Text style={styles.packageTextNegative}>Diebstahl </Text>
@@ -104,13 +119,14 @@ export default class Detailskomponente extends Component {
               <View style={styles.horizontalDivider}/>
               <View style={styles.container}>
                 <Text style={styles.price}> 3,99€ </Text>
+                <Text style={[styles.packageText, {color:'#EB5757', marginBottom: 12, fontWeight:'bold'}]}>+ ein Freebie</Text>
               </View>
               <Button onPress={() => {this.props.navigation.navigate("Kaufen")}} title='Auswählen' color='#F2C94C' />
             </Card>
 
           <Card
             image={require('../resources/detail/Top.png')}
-            containerStyle={{ padding: 0, width: 150 }}>
+            containerStyle={{ padding: 0, width: 180 }}>
             <Text style={{ marginTop:16, alignSelf:'center'}}>Haftpflicht </Text>
             <View style={styles.horizontalDivider}/>
             <Text style={styles.packageText}>Diebstahl </Text>
@@ -119,6 +135,7 @@ export default class Detailskomponente extends Component {
             <View style={styles.horizontalDivider}/>
             <View style={styles.container}>
               <Text style={styles.price}> 5,99€ </Text>
+              <Text style={[styles.packageText, {color:'#EB5757', marginBottom: 12, fontWeight:'bold'}]}>+ ein Freebie</Text>
             </View>
             <Button title='Auswählen' color='#27AE60' />
 
