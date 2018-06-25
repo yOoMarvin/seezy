@@ -1,9 +1,8 @@
 'use strict'
 
-import React, {Component} from "react";
-import {View,Text, StyleSheet} from 'react-native';
-
-import {List, ListItem} from 'react-native-elements';
+import React, { Component } from "react";
+import { View,Text, StyleSheet } from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 
 const list = [
     {

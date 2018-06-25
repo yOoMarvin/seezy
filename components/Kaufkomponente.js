@@ -167,12 +167,10 @@ const styles = StyleSheet.create({
     height:24
   },
 
-  //TODO size anpassen
   packages: {
     marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    //width:'100%',
     height: 80
   },
   eventDetailText: {

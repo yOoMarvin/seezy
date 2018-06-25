@@ -1,13 +1,5 @@
 import React, {Component} from "react";
-import {
-    FlatList,
-    Text,
-    ScrollView,
-    StyleSheet,
-    View,
-    TouchableOpacity,
-    Image,
-} from "react-native";
+import { FlatList, Text, ScrollView, StyleSheet, View, TouchableOpacity, Image } from "react-native";
 
 const dataFeatured = [
     {

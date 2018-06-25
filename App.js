@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {FlatList, View, Image, Text, ActivityIndicator, TouchableOpacity, ScrollView, StyleSheet} from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import {SearchBar} from "react-native-elements";
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
@@ -10,7 +10,6 @@ import Chat from './components/Chat';
 import Kaufkomponente from './components/Kaufkomponente';
 import Bookedkomponente from './components/Bookedkomponente';
 import Freebie from './components/Freebie';
-
 
 //firebase.database().goOnline();
 
@@ -74,7 +73,7 @@ class Bookedscreen extends Component {
   };
   render(){
     return(
-      <View style = {{flex:1, marginTop:30}}>
+      <View style = {{flex:1, marginTop:12}}>
         <Bookedkomponente navigation = {this.props.navigation}/>
       </View>
     );

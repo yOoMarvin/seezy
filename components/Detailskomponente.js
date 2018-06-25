@@ -25,8 +25,6 @@ const data =[
   }
 ];
 
-
-
 export default class Detailskomponente extends Component {
   constructor(props) {
     super(props);
@@ -37,12 +35,10 @@ export default class Detailskomponente extends Component {
 
   shareMessage ()
     {
-          Share.share(
-          {
-              
-            message: 'Seezy - Dein Begleiter für Events'
-          
-          }).then(result => console.log(result)).catch(errorMsg => console.log(errorMsg));
+      Share.share(
+        {
+          message: 'getSeezy.com - Dein Begleiter für Events. Sichere dir jetzt drei gratis Absicherungen'
+        }).then(result => console.log(result)).catch(errorMsg => console.log(errorMsg));
     }
 
   render() {
@@ -50,8 +46,7 @@ export default class Detailskomponente extends Component {
       <ScrollView>
         <View>
           <Image source={require('../resources/detail/hackathon.jpg')}
-          style = {styles.headerImage}
-          />
+          style = {styles.headerImage}/>
           <View style ={styles.row}>
             <Text style={styles.heading}> SV Insurathon </Text>
             <TouchableOpacity onPress={this.shareMessage}>
@@ -105,7 +100,6 @@ export default class Detailskomponente extends Component {
         </View>
 
         <View style={styles.horizontalDivider}/>
-
 
           <View style ={styles.packages}>
             <Card

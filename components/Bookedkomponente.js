@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, Text, ScrollView, StyleSheet, View, Image, TouchableOpacity, Alert } from "react-native";
+import {  Text, ScrollView, StyleSheet, View, Image, TouchableOpacity, Alert } from "react-native";
 import { Card } from "react-native-elements";
 
 const data = [
@@ -32,8 +32,6 @@ const data = [
   }
 ];
 
-
-
 export default class Bookedkomponente extends Component {
   constructor(props) {
     super(props);
@@ -60,8 +58,7 @@ export default class Bookedkomponente extends Component {
         <Card
           image={require('../resources/Insurathon-Booked.png')}
           containerStyle={{ width: '95%' }}
-          imageStyle={{ height: 180}}
-        >
+          imageStyle={{ height: 180}}>
           <Text style={[styles.subheading, styles.centerText]}>SV Insurathon</Text>
           <View style={styles.horizontalDivider}/>
           <Text style={styles.centerText}>Am Löwentor {"\n"}</Text>
@@ -82,7 +79,7 @@ export default class Bookedkomponente extends Component {
 
         <View style={styles.horizontalDivider}/>
 
-        <Text style={styles.subheading}> Beendet </Text>
+        <Text style={styles.subheading}>Beendet</Text>
 
         <Image source={require('../resources/publicviewing-booked.png')}  style={{height: 180, width: '95%', marginLeft: 12, marginRight: 12, marginBottom: 12}}/>
 
@@ -129,12 +126,10 @@ const styles = StyleSheet.create({
     marginLeft: 12
   },
 
-  //TODO size anpassen
   packages: {
     marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    //width:'100%',
     height: 80
   },
 

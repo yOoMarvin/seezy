@@ -1,10 +1,8 @@
 /*jshint esversion: 6  */
 (function () {'use strict';}());
 
-import React, {Component} from "react";
-import {View,Text, Image} from 'react-native';
-
-import {List, ListItem} from 'react-native-elements';
+import React, { Component } from "react";
+import { View,Text, Image } from 'react-native';
 
 export default class Bookedkomponente extends Component {
     constructor(props) {
