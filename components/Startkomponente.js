@@ -38,9 +38,7 @@ export default class Startkomponente extends Component {
                 <Text style={styles.categoryTitle}>
                     Empfohlen
                 </Text>
-                <Button
-                  title= "Mehr"
-                  color= "#EB5757"/>
+                <Text style={{color:"#EB5757", marginTop:8}}>Mehr</Text>
               </View>
               <FlatList
                   horizontal
@@ -65,9 +63,7 @@ export default class Startkomponente extends Component {
                 <Text style ={styles.categoryTitle}>
                     Konzerte
                 </Text>
-                <Button
-                  title= "Mehr"
-                  color= "#EB5757"/>
+                <Text style={{color:"#EB5757", marginTop:8}}>Mehr</Text>
               </View>
 
               <FlatList
@@ -91,9 +87,7 @@ export default class Startkomponente extends Component {
                 <Text style={styles.categoryTitle}>
                     Sport
                 </Text>
-                <Button
-                  title= "Mehr"
-                  color= "#EB5757"/>
+                <Text style={{color:"#EB5757", marginTop:8}}>Mehr</Text>
               </View>
 
               <FlatList
@@ -115,9 +109,7 @@ export default class Startkomponente extends Component {
                 <Text style={styles.categoryTitle}>
                     Kultur
                 </Text>
-                <Button
-                  title= "Mehr"
-                  color= "#EB5757"/>
+                <Text style={{color:"#EB5757", marginTop:8}}>Mehr</Text>
               </View>
               <FlatList
                   horizontal
