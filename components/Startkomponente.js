@@ -35,13 +35,13 @@ const dataConcert = [
 
 const dataSport = [
     {
-        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverFussball.png"
     }, 
     {
         imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png"
     }, 
     {
-        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png"
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverFussball2.png"
     }
 ];
 
