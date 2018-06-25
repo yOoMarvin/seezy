@@ -53,61 +53,43 @@ export default class Bookedkomponente extends Component {
       <ScrollView>
         {this.showAlert(this)}
         <View>
-          <Text style={styles.heading}> Meine Events </Text>
+          <Text style={styles.heading}>Meine Events</Text>
+          <Text style={styles.subheading}>Aktuell</Text>
         </View>
 
         <Card
           image={require('../resources/detail/currentbooked.png')}
-          containerStyle={{ padding: 5, width: '95%'}}
+          containerStyle={{ width: '95%' }}
         >
-          <Text> Public Viewing </Text>
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-            }}
-          />
-          <Text>Biergarten Schlosspark {"\n"}</Text>
-          <Text> 30.06.2018 </Text>
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-            }}
-          />
-          <Text>Mein Schutz: Basic </Text>
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-              marginTop: 20
-            }}
-          />
+          <Text style={[styles.subheading, styles.centerText]}>SV Insurathon</Text>
+          <View style={styles.horizontalDivider}/>
+          <Text style={styles.centerText}>Biergarten Schlosspark {"\n"}</Text>
+          <Text style={styles.centerText}> 30.06.2018 </Text>
+          <View style={styles.horizontalDivider}/>
+          <Text style={styles.centerText}>Mein Schutz: Basic </Text>
+          <View style={styles.horizontalDivider}/>
+          <View style={[styles.row, styles.centerText]}>
+            <Image 
+              source={require('../resources/gift.png')}
+              style = {styles.iconGift}
+            />
+            <TouchableOpacity style={{marginLeft: 12}}>
+              <Text style={{color: '#EB5757', padding: 0}}>Freigetränk sichern</Text>
+            </TouchableOpacity>
+          </View>
 
         </Card>
 
-        <View
-          style={{
-            borderBottomColor: 'black',
-            borderBottomWidth: 1,
-            marginTop: 20
-          }}
-        />
+        <View style={styles.horizontalDivider}/>
 
-        <Text style={styles.heading}> Beendet </Text>
+        <Text style={styles.subheading}> Beendet </Text>
 
         <Card
-          image={require('../resources/detail/pastbooked.png')}
           containerStyle={{ width: '95%' }}
         >
-        </Card>
-
-        <Card
-          image={require('../resources/detail/pastbooked.png')}
-          containerStyle={{ width: '95%' }}
-        >
+          <View style={styles.row}>
+            
+          </View>
         </Card>
 
       </ScrollView>
@@ -123,24 +105,34 @@ const styles = StyleSheet.create({
     height: 150,
     width: '100%'
   },
-
-  heading: {
-    fontSize: 30,
+  heading:{
+    marginTop: 12,
+    marginLeft: 12,
+    fontSize:36,
+    fontWeight: 'bold'
+  },
+  subheading:{
+    fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 20
+    marginLeft: 12,
+    marginTop: 12
+  },
+ centerText:{
+    justifyContent:'center',
+    alignSelf: 'center'
   },
 
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 20,
-    height: 110,
+    marginTop: 10,
+    height: 80,
     width: '100%'
   },
 
-  icon: {
-    width: '12%',
-    height: 50
+  iconGift: {
+    width: 28,
+    height: 28,
+    marginLeft: 12
   },
 
   //TODO size anpassen
@@ -173,11 +165,14 @@ const styles = StyleSheet.create({
   textdesc: {
     fontSize: 15
   },
-
-  popup: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+  horizontalDivider: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
+    marginTop: 32,
+    marginBottom: 32,
+    width: '80%',
+    justifyContent:'center',
+    alignSelf: 'center'
   }
 
 });
