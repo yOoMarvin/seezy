@@ -9,24 +9,45 @@ import {
     Image,
 } from "react-native";
 
-const data = [
+const dataFeatured = [
     {
-        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/InsurathonCover.png",
-    }, {
-        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png",
-    }, {
-        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/HoliCover.png",
-    }, {
-        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/ConcertCover.png",
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/InsurathonCover.png"
+    }, 
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverWasen.png"
+    }, 
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverDasFest.png"
+    }
+];
+
+const dataConcert = [
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverHappiness.png"
+    }, 
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/HoliCover.png"
+    }, 
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/ConcertCover.png"
+    }
+];
+
+const dataSport = [
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverFussball.png"
+    }, 
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/PublicCover.png"
+    }, 
+    {
+        imageUrl: "https://s3.eu-central-1.amazonaws.com/seezy-images/CoverFussball2.png"
     }
 ];
 
 export default class Startkomponente extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            data: data
-        };
     }
 
     render() {
@@ -40,7 +61,7 @@ export default class Startkomponente extends Component {
               </View>
               <FlatList
                   horizontal
-                  data={this.state.data}
+                  data={dataFeatured}
                   renderItem={({item}) => {
 
                       return (
@@ -66,7 +87,7 @@ export default class Startkomponente extends Component {
 
               <FlatList
                   horizontal
-                  data={this.state.data}
+                  data={dataConcert}
                   renderItem={({item}) => {
                       return (
                         <TouchableOpacity 
@@ -90,7 +111,7 @@ export default class Startkomponente extends Component {
 
               <FlatList
                   horizontal
-                  data={this.state.data}
+                  data={dataSport}
                   renderItem={({item}) => {
                       return (
                         <TouchableOpacity style = {styles.coverContainer}>
@@ -111,7 +132,7 @@ export default class Startkomponente extends Component {
               </View>
               <FlatList
                   horizontal
-                  data={this.state.data}
+                  data={dataFeatured}
                   renderItem={({item}) => {
                       return (
                         <TouchableOpacity style = {styles.coverContainer}>
