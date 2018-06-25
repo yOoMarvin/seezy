@@ -1,19 +1,11 @@
 import React, { Component } from "react";
-import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button, TouchableOpacity, Alert } from "react-native";
+import { Text, ScrollView, StyleSheet, View, Image, TouchableOpacity} from "react-native";
 import { Card } from "react-native-elements";
-import PopupDialog from 'react-native-popup-dialog';
 
 export default class Kaufkomponente extends Component {
   constructor(props) {
     super(props);
   }
-
-  showAlert() {
-    Alert.alert('High Five!', 'Viel Spaß bei deinem Event! Jetzt heißt es nur noch genießen. Den Rest machen wir.',
-      [{ text: 'OK', onPress: () => {console.log("Done");} }],
-      { cancelable: false });
-  }
-  // TODO Bei ok zum Booked Screen
 
   render() {
     return (
@@ -105,7 +97,7 @@ export default class Kaufkomponente extends Component {
           </View>
 
           <View style={styles.popup}>
-          <TouchableOpacity onPress={this.showAlert} style={{width: '60%', backgroundColor:'#27AE60', padding: 12, borderRadius: 3, alignItems: 'center',
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Booked')} style={{width: '60%', backgroundColor:'#27AE60', padding: 12, borderRadius: 3, alignItems: 'center',
     justifyContent: 'center', marginBottom: 12}}>
             <Text style={{color: 'white'}}>ABSICHERN</Text>
           </TouchableOpacity>

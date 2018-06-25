@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button } from "react-native";
-import { Card, ListItem } from "react-native-elements";
+import { Card } from "react-native-elements";
 
 const data =[
   {

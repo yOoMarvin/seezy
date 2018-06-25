@@ -34,7 +34,7 @@ class Startscreen extends Component{
         source={require('./resources/nav/calendar.png')}
         style={[styles.iconCalendar, { tintColor: tintColor }]}
       />
-    ),
+    )
   };
   render(){
     return(
@@ -132,6 +132,12 @@ const EventStack = createStackNavigator({
     screen:KaufScreen,
     navigationOptions: {
       headerTintColor: '#EB5757',
+    }
+  },
+  Booked: {
+    screen:Bookedscreen,
+    navigationOptions: {
+      headerTintColor: '#EB5757'
     }
   }
 });

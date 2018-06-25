@@ -5,11 +5,9 @@ import {
     ScrollView,
     StyleSheet,
     View,
-    Button,
     TouchableOpacity,
-    Image
+    Image,
 } from "react-native";
-import {Card, SearchBar} from "react-native-elements";
 
 const data = [
     {

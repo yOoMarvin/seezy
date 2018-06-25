@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { FlatList, Text, ScrollView, StyleSheet, View, Image, Button, TouchableOpacity, Alert } from "react-native";
+import { FlatList, Text, ScrollView, StyleSheet, View, Image, TouchableOpacity, Alert } from "react-native";
 import { Card } from "react-native-elements";
-import PopupDialog from 'react-native-popup-dialog';
 
 const data = [
   {
@@ -43,12 +42,16 @@ export default class Bookedkomponente extends Component {
     };
   }
 
-  // TODO Bei ok zum Booked Screen
+  showAlert() {
+    Alert.alert('High Five!', 'Viel Spaß bei deinem Event! Jetzt heißt es nur noch genießen. Den Rest machen wir.',
+      [{ text: 'OK', onPress: () => {console.log("this");} }],
+      { cancelable: false });
+  }
 
   render() {
     return (
       <ScrollView>
-
+        {this.showAlert(this)}
         <View>
           <Text style={styles.heading}> Meine Events </Text>
         </View>
