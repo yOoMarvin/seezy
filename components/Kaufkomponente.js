@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import { Text, ScrollView, StyleSheet, View, Image, TouchableOpacity} from "react-native";
+import { Text, ScrollView, StyleSheet, View, Image, Alert, TouchableOpacity} from "react-native";
 import { Card } from "react-native-elements";
 
 export default class Kaufkomponente extends Component {
   constructor(props) {
     super(props);
+
+    this.showAlert = this.showAlert.bind(this);
+  }
+
+  showAlert() {
+    Alert.alert('High Five!', 'Viel Spaß bei deinem Event! Jetzt heißt es nur noch genießen. Den Rest machen wir.',
+      [{ text: 'OK', onPress: () => {this.props.navigation.navigate('Booked');}}],
+      { cancelable: false });
   }
 
   render() {
@@ -97,7 +105,7 @@ export default class Kaufkomponente extends Component {
           </View>
 
           <View style={styles.popup}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Booked')} style={{width: '60%', backgroundColor:'#27AE60', padding: 12, borderRadius: 3, alignItems: 'center',
+          <TouchableOpacity onPress={this.showAlert} style={{width: '60%', backgroundColor:'#27AE60', padding: 12, borderRadius: 3, alignItems: 'center',
     justifyContent: 'center', marginBottom: 12}}>
             <Text style={{color: 'white'}}>ABSICHERN</Text>
           </TouchableOpacity>

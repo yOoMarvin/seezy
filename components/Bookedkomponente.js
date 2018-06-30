@@ -40,16 +40,9 @@ export default class Bookedkomponente extends Component {
     };
   }
 
-  showAlert() {
-    Alert.alert('High Five!', 'Viel Spaß bei deinem Event! Jetzt heißt es nur noch genießen. Den Rest machen wir.',
-      [{ text: 'OK', onPress: () => {console.log("this");} }],
-      { cancelable: false });
-  }
-
   render() {
     return (
       <ScrollView>
-        {this.showAlert(this)}
         <View>
           <Text style={styles.heading}>Meine Events</Text>
           <Text style={styles.subheading}>Aktuell</Text>
